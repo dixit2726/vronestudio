@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useParams, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, useParams, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Globe, 
@@ -41,12 +41,12 @@ const SocialIcons = {
 };
 
 const images = {
-  hero: '/hero_marketing_team_1776364881187.png',
-  webDev: '/web_development_service_1776365236415.png',
-  seo: '/seo_service_image_1776365378251.png',
-  ads: '/ads_service_image_1776365525954.png',
-  social: '/social_media_service_1776365956501.png',
-  content: '/content_brand_service_1776366221729.png',
+  hero: 'hero_marketing_team_1776364881187.png',
+  webDev: 'web_development_service_1776365236415.png',
+  seo: 'seo_service_image_1776365378251.png',
+  ads: 'ads_service_image_1776365525954.png',
+  social: 'social_media_service_1776365956501.png',
+  content: 'content_brand_service_1776366221729.png',
 };
 
 const ScrollToTop = () => {
@@ -333,7 +333,7 @@ const BlogPostPage = () => {
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: '20px' }}>{post.title}</h1>
           <p style={{ color: 'var(--text-dim)' }}>Published on {post.date}</p>
         </div>
-        <img src={post.img.startsWith('/') ? post.img : `/${post.img}`} alt={post.title} className="blog-post-image" />
+        <img src={post.img} alt={post.title} className="blog-post-image" />
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
     </div>
